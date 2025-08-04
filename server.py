@@ -22,11 +22,15 @@ async def handle_client(reader, writer):
             message = data.decode().strip()
 
             if message == "list":
-                client_list = "\n".join(f"{client}" for client in connected_clients)
-                response = f"Connected clients:\n{client_list}\n"
+                client_list = ""
+                for client in connected_clients:
+                    marker = " (you)" if client == addr else ""
+                    client_list += f"{client}{marker}\n"
+
+                response = f"Connected clients:\n{client_list}"
                 writer.write(response.encode())
                 await writer.drain()
-                continue  # Skip echoing the original message
+                continue
 
             print(f"Received {message} from {addr}")
             writer.write(data)
