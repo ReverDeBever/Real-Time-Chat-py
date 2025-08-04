@@ -1,7 +1,7 @@
 import socket
 import threading
 
-DEFAULT_HOST = "127.0.0.1"
+DEFAULT_HOST = "test.reverberver.online"
 HOST_INPUT = input(f"Enter server host (default: {DEFAULT_HOST}): ").strip()
 HOST = HOST_INPUT if HOST_INPUT else DEFAULT_HOST
 PORT = 5000

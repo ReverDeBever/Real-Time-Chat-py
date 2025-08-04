@@ -1,6 +1,6 @@
 import asyncio
 
-default_host = "127.0.0.1"
+default_host = "test.reverberver.online"
 host_input = input(f"Enter server host to bind to (default: {default_host}): ").strip()
 HOST = host_input if host_input else default_host
 PORT = 5000
